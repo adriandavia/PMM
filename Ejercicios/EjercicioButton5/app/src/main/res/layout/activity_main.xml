@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.adrian.ejerciciobutton5.MainActivity">
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/n1"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:text="Primer número: "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/numero1"
+        android:layout_alignBottom="@+id/n1"
+        android:layout_toStartOf="@+id/n1"
+        android:gravity="center"
+        android:textSize="18sp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:layout_below="@+id/n1"
+        android:layout_toEndOf="@+id/numero1"
+        android:id="@+id/n2" />
+
+    <TextView
+        android:text="Segundo número:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/numero1"
+        android:layout_alignParentStart="true"
+        android:id="@+id/numero2"
+        android:layout_toStartOf="@+id/n1"
+        android:layout_alignBottom="@+id/n2"
+        android:gravity="center"
+        android:textSize="18sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/resultado"
+        android:layout_toEndOf="@+id/numero2"
+        android:layout_below="@+id/n2"
+        android:gravity="center"
+        android:textSize="18sp" />
+
+    <TextView
+        android:text="Resultado:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/resultado"
+        android:layout_alignParentStart="true"
+        android:id="@+id/textView30"
+        android:layout_toStartOf="@+id/n2"
+        android:textSize="18sp" />
+
+    <Button
+        android:text="Resultado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/result"
+        android:layout_below="@+id/resultado"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="71dp" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/radio"
+        android:layout_alignBottom="@+id/result"
+        android:layout_alignParentStart="true">
+
+        <RadioButton
+            android:text="Suma"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/numero2"
+            android:layout_alignParentStart="true"
+            android:id="@+id/suma"
+            android:layout_toStartOf="@+id/n2" />
+
+        <RadioButton
+            android:text="Resta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/suma"
+            android:layout_alignParentStart="true"
+            android:id="@+id/resta"
+            android:layout_toStartOf="@+id/resultado" />
+       </RadioGroup>
+
+</RelativeLayout>
