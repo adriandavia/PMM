@@ -1,0 +1,24 @@
+* Ejercicios de botones: 
+
+	- EjercicioButton1 - Implementación de los Ejercicios de layout
+
+		* Ejercicios de layouts: 
+
+			- Ejercicio1-LinearLayout - Utilizamos un 				linear layout con diferentes widgets
+
+			- Ejercicio2,3-TableLayout - Utilizamos un 				table layout para colorear un text view
+
+				2: Creamos un color con Color.parseColor
+				3: Leemos los colores desde un fichero
+
+			- Ejercicio4-RelativeLayout - Creamos una V con 			botones
+
+	- EjercicioButton2 - Color con ImageButton
+
+	- EjercicioButton3 - Color con RadioButton
+
+	- EjercicioButton4 - Color con ToggleButton
+
+	- EjercicioButton5 - proySumaResta
+
+	- EjercicioButton6 - Cambio entre actividades
