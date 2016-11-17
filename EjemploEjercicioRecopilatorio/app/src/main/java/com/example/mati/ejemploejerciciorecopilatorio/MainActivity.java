@@ -65,7 +65,10 @@ public class MainActivity extends AppCompatActivity {
 
                 //Precio del peso y pasarlo
                 double preciopeso = 0;
-                if (Double.parseDouble(peso.getText().toString()) <= 5){
+                if (peso.getText().toString().isEmpty()){
+                    peso.setText("0");
+                }
+                if (Double.parseDouble(peso.getText().toString()) < 6){
                     preciopeso = Double.parseDouble(peso.getText().toString()) * 1;
                 }
                 if (Double.parseDouble(peso.getText().toString()) >= 6 && Double.parseDouble(peso.getText().toString()) < 10){
@@ -75,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
                     preciopeso = Double.parseDouble(peso.getText().toString()) * 2;
                 }
                 paso.putExtra("peso", peso.getText().toString());
-                paso.putExtra("preciopeso", preciopeso);
+                paso.putExtra("preciopeso", String.valueOf(preciopeso));
                 double total =  preciozona + preciopeso;
 
                 //Precio de tarifa y pasarlo
@@ -96,11 +99,16 @@ public class MainActivity extends AppCompatActivity {
                 total = total + tarifa;
 
                 //Tipo de envoltorio
+                boolean checked = false;
                 if(caja.isChecked()){
+                    checked = true;
                     paso.putExtra("cajaregalo", caja.getText().toString());
+                    paso.putExtra("checked", checked);
                 }
                 if(tarjeta.isChecked()){
+                    checked = true;
                     paso.putExtra("tarjeta", tarjeta.getText().toString());
+                    paso.putExtra("checked2", checked);
                 }
                 startActivity(paso);
                 //String mensaje = "Total = " + total;
