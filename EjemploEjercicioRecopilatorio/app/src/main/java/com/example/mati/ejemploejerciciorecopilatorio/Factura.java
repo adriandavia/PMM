@@ -1,8 +1,14 @@
 package com.example.mati.ejemploejerciciorecopilatorio;
 
+import android.content.Intent;
 import android.support.v4.widget.TextViewCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class Factura extends AppCompatActivity {
@@ -19,7 +25,8 @@ public class Factura extends AppCompatActivity {
         TextView complemento2 = (TextView)findViewById(R.id.complemento2);
         TextView peso = (TextView)findViewById(R.id.peso);
         TextView preciopeso = (TextView)findViewById(R.id.preciopeso);
-
+        TextView total = (TextView)findViewById(R.id.total);
+        Button recalcular = (Button) findViewById(R.id.recalcular);
 
         Bundle objeto = getIntent().getExtras();
         destino Destino = (destino)objeto.getSerializable("destino");
@@ -43,5 +50,16 @@ public class Factura extends AppCompatActivity {
 
         peso.setText(getIntent().getStringExtra("peso") + "kg");
         preciopeso.setText(getIntent().getStringExtra("preciopeso") + "€");
+
+        total.setText(String.valueOf(Destino.getPrecio()) + "€ + " + getIntent().getStringExtra("preciopeso")
+        + "€ + " + getIntent().getStringExtra("tarifa") +"€ = " + getIntent().getStringExtra("total") + "€");
+
+        recalcular.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent volver = new Intent(Factura.this, MainActivity.class);
+                startActivity(volver);
+            }
+        });
     }
 }

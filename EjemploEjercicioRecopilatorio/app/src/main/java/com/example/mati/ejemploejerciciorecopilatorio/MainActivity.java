@@ -95,8 +95,9 @@ public class MainActivity extends AppCompatActivity {
                     ntarifa = normal.getText().toString();
                 }
                 paso.putExtra("nombretarifa", ntarifa);
-                paso.putExtra("tarifa", tarifa);
+                paso.putExtra("tarifa", String.valueOf(tarifa));
                 total = total + tarifa;
+                paso.putExtra("total", String.valueOf(total));
 
                 //Tipo de envoltorio
                 boolean checked = false;
