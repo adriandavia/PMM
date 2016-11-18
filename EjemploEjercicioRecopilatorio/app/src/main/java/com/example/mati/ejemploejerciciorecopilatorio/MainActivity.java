@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 //Para empezar a pasar de pagina
                 Intent paso = new Intent(MainActivity.this, Factura.class);
+
                 //Para pasar objetos
                 Bundle pasoobjetos = new Bundle();
                 //Precio de la zona y pasar el objeto
