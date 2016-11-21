@@ -6,15 +6,26 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/LblZona" />
+        android:id="@+id/LblZona"
+        android:textStyle="normal|bold"
+        android:textColor="@android:color/black" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/LblContinente" />
+        android:id="@+id/LblContinente"
+        android:textStyle="normal|bold"
+        android:textColor="@android:color/black" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/LblPrecio" />
+        android:id="@+id/LblPrecio"
+        android:textStyle="normal|bold"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView" />
 </LinearLayout>
