@@ -33,13 +33,14 @@ public class Dibujar extends AppCompatActivity {
             circulos.setStrokeWidth(15);
             circulos.setStyle(Paint.Style.STROKE);
 
-            canvas.drawLine(380, 200, 930, 200, lineas);
+            canvas.drawLine(270, 200, 930, 200, lineas);
             canvas.drawLine(240,400 , 150, 400, lineas);
             canvas.drawCircle(300, 400, 60, circulos);
             canvas.drawLine(360,400 ,740, 400, lineas);
             canvas.drawCircle(800, 400, 60, circulos);
             canvas.drawLine(860, 400 , 930, 400, lineas);
             canvas.drawLine(930, 400, 930, 200, lineas);
+            canvas.drawLine(270, 200, 160, 400, lineas);
 
         }
     }
