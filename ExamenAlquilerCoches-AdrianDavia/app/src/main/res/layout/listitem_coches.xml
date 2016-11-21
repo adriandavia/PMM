@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="187dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/Lblmodelo"
+        android:textStyle="normal|bold"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/Lblmarca"
+        android:textStyle="normal|bold"
+        android:textColor="@android:color/black"
+        android:layout_below="@+id/Lblmodelo"
+        android:layout_alignEnd="@+id/Lblmodelo" />
+
+    <TextView
+        android:layout_width="196dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/Lblprecio"
+        android:textStyle="normal|bold"
+        android:textColor="@android:color/black"
+        android:layout_below="@+id/Lblmarca"
+        android:layout_alignEnd="@+id/Lblmarca" />
+
+    <TextView
+        android:layout_width="195dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+        android:layout_below="@+id/Lblprecio"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/Lblprecio" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/cimagen"
+        android:adjustViewBounds="false"
+        android:cropToPadding="false"
+        android:scaleX="0.5"
+        android:scaleY="0.5"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignBottom="@+id/textView" />
+
+</RelativeLayout>

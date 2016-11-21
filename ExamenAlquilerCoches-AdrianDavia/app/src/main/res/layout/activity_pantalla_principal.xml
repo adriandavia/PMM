@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.mati.examenalquilercoches_adriandavia.PantallaPrincipal">
+
+    <TextView
+        android:text="Alquiler de Coches"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/titulo"
+        android:layout_alignParentEnd="true"
+        android:textColor="@android:color/black"
+        android:textAlignment="center"
+        android:textStyle="normal|bold|italic"
+        android:textSize="24sp"
+        android:textAllCaps="false" />
+
+    <CheckBox
+        android:text="Radio/DBD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/radiodvd"
+        android:layout_below="@+id/seguros"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="37dp"
+        android:textSize="12sp"
+        android:textStyle="normal|bold" />
+
+    <CheckBox
+        android:text="Aire Acondicionado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/aire"
+        android:layout_alignBaseline="@+id/radiodvd"
+        android:layout_alignBottom="@+id/radiodvd"
+        android:layout_alignParentStart="true"
+        android:textStyle="normal|bold"
+        android:textSize="12sp" />
+    <!--android:hint para que se borre el texto la clickar!-->
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Horas a alquilar"
+        android:ems="10"
+        android:layout_below="@+id/radiodvd"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="36dp"
+        android:id="@+id/horas"
+        android:textAlignment="center"
+        android:textStyle="normal|bold"
+        android:layout_toStartOf="@+id/gps"
+        android:textSize="14sp" />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/coches"
+        style="@android:style/Widget.DeviceDefault.Light.Spinner"
+        android:layout_below="@+id/titulo"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="11dp"
+        android:layout_toStartOf="@+id/seguros" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/logo"
+        android:id="@+id/imageView"
+        android:layout_below="@+id/horas"
+        android:layout_alignParentEnd="true" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/seguros"
+        android:layout_below="@+id/titulo"
+        android:layout_alignParentEnd="true">
+
+        <RadioButton
+            android:text="Sin seguro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/noseguro"
+            android:layout_below="@+id/coches"
+            android:layout_alignParentStart="true"
+            android:textSize="12sp"
+            android:textStyle="normal|bold"
+            android:checked="true" />
+
+        <RadioButton
+            android:text="Seguro TODO riesgo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:id="@+id/segurotodo"
+            android:layout_below="@+id/coches"
+            android:layout_alignParentStart="true"
+            android:textSize="12sp"
+            android:textStyle="normal|bold" />
+    </RadioGroup>
+
+    <CheckBox
+        android:text="GPS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/gps"
+        android:textSize="12sp"
+        android:textStyle="normal|bold"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:layout_marginStart="32dp"
+        android:layout_above="@+id/horas"
+        android:layout_toEndOf="@+id/aire" />
+
+    <Button
+        android:text="Factura"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/factura"
+        android:textSize="14sp"
+        android:textStyle="normal|bold"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:text="Precio total:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/horas"
+        android:layout_toEndOf="@+id/horas"
+        android:id="@+id/total"
+        android:textSize="12sp"
+        android:textStyle="normal|bold"
+        android:textColor="@android:color/black"
+        android:textAllCaps="false" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/imageView"
+        android:id="@+id/ptotal"
+        android:textSize="18sp"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/total"
+        android:textStyle="normal|bold"
+        android:textAlignment="center"
+        android:textColor="@android:color/black" />
+</RelativeLayout>
