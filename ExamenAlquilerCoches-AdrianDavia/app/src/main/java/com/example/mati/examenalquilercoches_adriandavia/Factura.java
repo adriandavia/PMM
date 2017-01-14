@@ -33,14 +33,14 @@ public class Factura extends AppCompatActivity {
         imagen.setBackground(getDrawable(coche.getImagen()));
         modelo.setText(coche.getModelo());
         phora.setText(String.valueOf(coche.getPrecio()) + "€");
-        extra.setText(getIntent().getStringExtra("extras") + "€");
-        tiempo.setText(getIntent().getStringExtra("tiempo") + "horas");
-        if (getIntent().getBooleanExtra("seguro", false) == true){
+        extra.setText(objeto.getString("extras") + "€");
+        tiempo.setText(objeto.getString("tiempo") + "horas");
+        if (objeto.getBoolean("seguro" , false) == true){
             seguro.setText("Con Seguro");
         }else {
             seguro.setText("Sin Seguro");
         }
-        ctotal.setText(getIntent().getStringExtra("total"));
+        ctotal.setText(objeto.getString("total"));
 
         h.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,15 +53,16 @@ public class Factura extends AppCompatActivity {
                 }
             }
         });
+        //Callback
         vuelta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent volver = new Intent(Factura.this, PantallaPrincipal.class);
-                saca = true;
-                volver.putExtra("sacar", saca);
-                volver.putExtra("hora", reloj.getText().toString());
-                isDestroyed();
-                startActivity(volver);
+                Bundle vuelta = new Bundle();
+                vuelta.putString("hora", reloj.getText().toString());
+                volver.putExtras(vuelta);
+                setResult(RESULT_OK, volver);
+                finish();
             }
         });
 

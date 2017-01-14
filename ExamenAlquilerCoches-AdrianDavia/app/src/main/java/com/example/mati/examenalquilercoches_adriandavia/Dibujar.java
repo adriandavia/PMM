@@ -4,8 +4,10 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Path;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 
 public class Dibujar extends AppCompatActivity {
@@ -22,26 +24,92 @@ public class Dibujar extends AppCompatActivity {
             super(context);
         }
 
+        float x=50;
+        float y=50;
+        String accion = "accion";
+        Path path = new Path();
 
         protected void onDraw(Canvas canvas) {
-            Paint lineas = new Paint();
-            Paint circulos = new Paint();
-            lineas.setColor(Color.BLACK);
-            lineas.setStrokeWidth(15);
-            lineas.setStyle(Paint.Style.STROKE);
-            circulos.setColor(Color.BLACK);
-            circulos.setStrokeWidth(15);
-            circulos.setStyle(Paint.Style.STROKE);
 
-            canvas.drawLine(270, 200, 930, 200, lineas);
-            canvas.drawLine(240,400 , 150, 400, lineas);
-            canvas.drawCircle(300, 400, 60, circulos);
-            canvas.drawLine(360,400 ,740, 400, lineas);
-            canvas.drawCircle(800, 400, 60, circulos);
-            canvas.drawLine(860, 400 , 930, 400, lineas);
-            canvas.drawLine(930, 400, 930, 200, lineas);
-            canvas.drawLine(270, 200, 160, 400, lineas);
+            Paint rueda1 = new Paint();
+            Paint rueda2 = new Paint();
+            Paint linea_une = new Paint();
+            Paint linea_delante = new Paint();
+            Paint linea_trasera = new Paint();
+            Paint curva = new Paint();
 
+
+            rueda1.setColor(Color.BLACK);
+            rueda1.setStrokeWidth(15);
+            rueda1.setStyle(Paint.Style.STROKE);
+
+            canvas.drawCircle(700,500,100,rueda1);
+
+            rueda2.setColor(Color.BLACK);
+            rueda2.setStrokeWidth(15);
+            rueda2.setStyle(Paint.Style.STROKE);
+
+            canvas.drawCircle(300,500,100,rueda2);
+
+            linea_une.setColor(Color.BLACK);
+            linea_une.setStrokeWidth(15);
+            linea_une.setStyle(Paint.Style.STROKE);
+
+            canvas.drawLine(400,500,600,500,linea_une);
+
+            linea_delante.setColor(Color.BLACK);
+            linea_delante.setStrokeWidth(15);
+            linea_delante.setStyle(Paint.Style.STROKE);
+
+            canvas.drawLine(800,500,900,500,linea_delante);
+
+            linea_trasera.setColor(Color.BLACK);
+            linea_trasera.setStrokeWidth(15);
+            linea_trasera.setStyle(Paint.Style.STROKE);
+
+            canvas.drawLine(200,500,100,500,linea_trasera);
+
+            curva.setColor(Color.BLACK);
+            curva.setStrokeWidth(15);
+            curva.setStyle(Paint.Style.STROKE);
+
+            canvas.drawRoundRect(1000,500,0,300,800,800,curva);
+
+            Paint tactil = new Paint();
+
+            tactil.setColor(Color.RED);
+            tactil.setStrokeWidth(15);
+            tactil.setStyle(Paint.Style.STROKE);
+
+            if(accion == "down"){
+                path.moveTo(x,y);
+            }
+
+            if(accion == "move"){
+                path.lineTo(x,y);
+
+            }
+            canvas.drawPath(path,tactil);
+
+        }
+        //devolver distintos valores(si estamos en la pantalla o no)
+        public boolean onTouchEvent(MotionEvent e){
+            x=e.getX();
+            y=e.getY();
+
+            //si presionamos la pantalla, la accion cambia a down
+            if (e.getAction() == MotionEvent.ACTION_DOWN){
+                accion="down";
+            }
+
+            //si movemos la pantalla, la accion cambia a move
+            if (e.getAction() == MotionEvent.ACTION_MOVE){
+                accion="move";
+            }
+
+            //actualiza nuestro dibujo
+            invalidate();
+            return true;
         }
     }
 }

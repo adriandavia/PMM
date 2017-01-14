@@ -33,6 +33,8 @@ public class PantallaPrincipal extends AppCompatActivity {
     private boolean seguro = false;
     private float total = 0;
 
+    //PARA EL CALLBACK
+    public static int COD_RESPUESTA = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,47 +44,48 @@ public class PantallaPrincipal extends AppCompatActivity {
         final Spinner zonas = (Spinner) findViewById(R.id.coches);
         zonas.setAdapter(adaptador);
 
-        Button totalp = (Button)findViewById(R.id.total);
-        Button factura = (Button)findViewById(R.id.factura);
-        final CheckBox aire = (CheckBox)findViewById(R.id.aire);
-        final CheckBox gps = (CheckBox)findViewById(R.id.gps);
-        final CheckBox radio = (CheckBox)findViewById(R.id.radiodvd);
-        horas = (EditText)findViewById(R.id.horas);
-        final Spinner coche = (Spinner)findViewById(R.id.coches);
-        final TextView totalprecio = (TextView)findViewById(R.id.ptotal);
-        final RadioGroup rg = (RadioGroup)findViewById(R.id.seguros);
+        Button totalp = (Button) findViewById(R.id.total);
+        Button factura = (Button) findViewById(R.id.factura);
+        final CheckBox aire = (CheckBox) findViewById(R.id.aire);
+        final CheckBox gps = (CheckBox) findViewById(R.id.gps);
+        final CheckBox radio = (CheckBox) findViewById(R.id.radiodvd);
+        horas = (EditText) findViewById(R.id.horas);
+        final Spinner coche = (Spinner) findViewById(R.id.coches);
+        final TextView totalprecio = (TextView) findViewById(R.id.ptotal);
+        final RadioGroup rg = (RadioGroup) findViewById(R.id.seguros);
 
         totalp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (horas.getText().toString().isEmpty()){
+                if (horas.getText().toString().isEmpty()) {
                     horas.setText("0");
                 }
                 total = Float.parseFloat(horas.getText().toString()) * datos[coche.getSelectedItemPosition()].getPrecio();
 
                 float a = 0, g = 0, r = 0;
-                if(aire.isChecked()){
+                if (aire.isChecked()) {
                     total = total + 50;
                     a = 50;
                 }
-                if(gps.isChecked()){
+                if (gps.isChecked()) {
                     total = total + 50;
                     g = 50;
                 }
-                if(radio.isChecked()){
+                if (radio.isChecked()) {
                     total = total + 50;
                     r = 50;
                 }
                 extras = a + g + r;
                 float tarifa = 0;
-                if (rg.getCheckedRadioButtonId() == R.id.segurotodo){
+                if (rg.getCheckedRadioButtonId() == R.id.segurotodo) {
                     tarifa = (total * 20) / 100;
                     seguro = true;
                 }
-                if (rg.getCheckedRadioButtonId() == R.id.noseguro){
+                if (rg.getCheckedRadioButtonId() == R.id.noseguro) {
                     tarifa = 0;
                 }
                 total = tarifa + total;
+
                 totalprecio.setText(String.valueOf(total) + "€");
             }
         });
@@ -94,20 +97,24 @@ public class PantallaPrincipal extends AppCompatActivity {
                 Bundle pasoobjetos = new Bundle();
 
                 Coches c = new Coches(datos[coche.getSelectedItemPosition()].getModelo(),
-                datos[coche.getSelectedItemPosition()].getMarca(), datos[coche.getSelectedItemPosition()].getPrecio(),
-                datos[coche.getSelectedItemPosition()].getImagen());
+                        datos[coche.getSelectedItemPosition()].getMarca(), datos[coche.getSelectedItemPosition()].getPrecio(),
+                        datos[coche.getSelectedItemPosition()].getImagen());
                 pasoobjetos.putSerializable("coche", c);
+                pasoobjetos.putString("extras", String.valueOf(extras));
+                pasoobjetos.putString("tiempo", horas.getText().toString());
+                pasoobjetos.putBoolean("seguro", seguro);
+                pasoobjetos.putString("total", totalprecio.getText().toString());
                 paso.putExtras(pasoobjetos);
-                paso.putExtra("extras", String.valueOf(extras));
-                paso.putExtra("tiempo", horas.getText().toString());
-                paso.putExtra("seguro", seguro);
-                paso.putExtra("total", totalprecio.getText().toString());
-
-                startActivity(paso);
+                //Sin esto no funciona el callback
+                startActivityForResult(paso, COD_RESPUESTA);
             }
         });
-        if (getIntent().getBooleanExtra("sacar", false) == true) {
-            Toast.makeText(getApplicationContext(), getIntent().getStringExtra("hora"), Toast.LENGTH_LONG).show();
+    }
+    //Callback
+    public void onActivityResult (int cod_res, int code_result, Intent intent){
+        if (code_result == RESULT_OK){
+            Bundle objeto = intent.getExtras();
+            Toast.makeText(getApplicationContext(), objeto.getString("hora"), Toast.LENGTH_LONG).show();
         }
     }
 
