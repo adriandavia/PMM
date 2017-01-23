@@ -12,32 +12,33 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
+import com.example.adrian.proyectotrimestral_adriandavia.Operaciones;
 public class Registro extends AppCompatActivity {
-    public static DbHelper mDbHelper = null;
+    private final Operaciones op = new Operaciones();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        final DbHelper dbHelper = new DbHelper(this, "dbtareas", null, 1);
 
         setContentView(R.layout.activity_registro);
         final Button unirse = (Button)findViewById(R.id.runirse);
         unirse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                SQLiteDatabase db = dbHelper.getWritableDatabase();
+
                 EditText nombre = (EditText)findViewById(R.id.rnombre);
                 EditText apellidos = (EditText)findViewById(R.id.rapellidos);
                 EditText usuario = (EditText)findViewById(R.id.rusuario);
                 EditText contraseña = (EditText)findViewById(R.id.rcontraseña);
                 EditText email = (EditText)findViewById(R.id.remail);
 
-                String insert_bd = "insert into usuarios (name, surname, usuario, contraseña, email) values('"+ nombre.getText().toString() +
-                        "', '" + apellidos.getText().toString() +"', '" + usuario.getText().toString() + "', '" + contraseña.getText().toString() +
-                        "', '"+ email.getText().toString() +"');";
+                TextView mensaje = (TextView)findViewById(R.id.mensajeerror);
+                Usuarios user = new Usuarios(nombre.getText().toString(), apellidos.getText().toString(),
+                        usuario.getText().toString(), contraseña.getText().toString(), email.getText().toString());
 
-                db.execSQL(insert_bd);
-                db.close();
+                mensaje.setText(op.insert_Usuarios(user));
+
             }
         });
 

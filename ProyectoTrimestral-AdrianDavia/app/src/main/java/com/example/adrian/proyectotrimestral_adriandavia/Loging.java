@@ -20,10 +20,6 @@ public class Loging extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loging);
 
-        //creamos base de datos y la abrimos (siempre usar)
-        DbHelper dbHelper = new DbHelper(this, "dbtareas", null, 1);
-        SQLiteDatabase db =dbHelper.getWritableDatabase();
-        dbHelper.onCreate(db);
         Button registrar = (Button)findViewById(R.id.registrar);
         registrar.setOnClickListener(new View.OnClickListener() {
             @Override
