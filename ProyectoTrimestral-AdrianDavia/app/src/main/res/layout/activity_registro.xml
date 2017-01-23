@@ -51,7 +51,8 @@
         android:textColor="@color/colorAccent"
         android:typeface="serif"
         android:fontFamily="sans-serif"
-        android:layout_height="42dp" />
+        android:layout_height="42dp"
+        android:layout_toStartOf="@+id/rapellidos" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -66,7 +67,8 @@
         android:typeface="serif"
         android:fontFamily="sans-serif"
         android:textAlignment="center"
-        android:textColor="@color/colorAccent" />
+        android:textColor="@color/colorAccent"
+        android:layout_alignStart="@+id/rapellidos" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -80,21 +82,23 @@
         android:fontFamily="sans-serif"
         android:typeface="serif"
         android:textSize="18sp"
-        android:textColor="@color/colorAccent" />
+        android:textColor="@color/colorAccent"
+        android:layout_alignStart="@+id/rusuario" />
 
     <TextView
         android:text="Usuario"
         android:layout_width="wrap_content"
         android:layout_height="42dp"
         android:layout_below="@+id/rapellidos"
-        android:layout_toStartOf="@+id/rnombre"
         android:id="@+id/usuario"
         android:textSize="18sp"
         android:textColor="@color/colorAccent"
         android:textStyle="normal|bold"
         android:textAlignment="center"
         android:fontFamily="sans-serif"
-        android:typeface="serif" />
+        android:typeface="serif"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/rapellidos" />
 
     <TextView
         android:text="Apellidos"
@@ -108,23 +112,8 @@
         android:textColor="@color/colorAccent"
         android:layout_height="42dp"
         android:layout_below="@+id/nombre"
-        android:layout_alignParentStart="true" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:layout_below="@+id/apellidos"
-        android:layout_alignParentEnd="true"
-        android:id="@+id/rusuario"
-        android:layout_toEndOf="@+id/usuario"
-        android:textStyle="normal|bold"
-        android:textAlignment="center"
-        android:textColor="@color/colorAccent"
-        android:textSize="18sp"
-        android:typeface="serif"
-        android:fontFamily="sans-serif" />
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/rusuario" />
 
     <TextView
         android:text="Contraseña"
@@ -168,7 +157,8 @@
         android:textColor="@color/colorAccent"
         android:textSize="18sp"
         android:fontFamily="sans-serif"
-        android:typeface="serif" />
+        android:typeface="serif"
+        android:layout_toStartOf="@+id/rcontraseña" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -182,7 +172,8 @@
         android:textColor="?attr/colorAccent"
         android:textSize="18sp"
         android:fontFamily="sans-serif"
-        android:typeface="serif" />
+        android:typeface="serif"
+        android:layout_alignStart="@+id/rcontraseña" />
 
     <Button
         android:text="¡UNIERSE!"
@@ -215,5 +206,21 @@
         android:textColor="@android:color/background_light"
         android:textStyle="normal|bold"
         android:textAlignment="center" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/rusuario"
+        android:textStyle="normal|bold"
+        android:textAlignment="center"
+        android:textColor="@color/colorAccent"
+        android:textSize="18sp"
+        android:typeface="serif"
+        android:fontFamily="sans-serif"
+        android:layout_below="@+id/rapellidos"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/contraseña" />
 
 </RelativeLayout>

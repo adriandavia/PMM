@@ -1,6 +1,8 @@
 package com.example.adrian.proyectotrimestral_adriandavia;
 
 import android.content.Intent;
+import android.database.DatabaseErrorHandler;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -18,6 +20,10 @@ public class Loging extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loging);
 
+        //creamos base de datos y la abrimos (siempre usar)
+        DbHelper dbHelper = new DbHelper(this, "dbtareas", null, 1);
+        SQLiteDatabase db =dbHelper.getWritableDatabase();
+        dbHelper.onCreate(db);
         Button registrar = (Button)findViewById(R.id.registrar);
         registrar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -30,7 +36,7 @@ public class Loging extends AppCompatActivity {
     public void onActivityResult(int cod_res, int code_result, Intent intent) {
         if (code_result == RESULT_OK) {
             mensaje = (TextView) findViewById(R.id.mensajecr);
-            mensaje.setText("Te has registrado correctamente. Prueba entrar.");
+            mensaje.setText("Te has registrado correctamente. Prueba a entrar.");
         }
     }
     //menu
@@ -43,7 +49,6 @@ public class Loging extends AppCompatActivity {
         switch (item.getItemId()){
             case R.id.acerca:
                 Intent acerca = new Intent(this, AcercaDe.class);
-                acerca.putExtra("valor", 1);
                 startActivity(acerca);
                 return true;
             default:

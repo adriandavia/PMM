@@ -17,17 +17,7 @@ public class AcercaDe extends AppCompatActivity {
         volver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent volver;
-                int valor = getIntent().getIntExtra("valor", 0);
-                if (valor == 1){
-                    volver = new Intent(AcercaDe.this, Loging.class);
-                    startActivity(volver);
-                    finish();
-                }else if (valor == 2){
-                    volver = new Intent(AcercaDe.this, Registro.class);
-                    startActivity(volver);
-                    finish();
-                }
+                finish();
             }
         });
     }
