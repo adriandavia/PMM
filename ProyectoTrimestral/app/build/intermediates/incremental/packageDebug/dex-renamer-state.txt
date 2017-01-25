@@ -1,4 +1,4 @@
-#Wed Jan 25 08:39:37 CET 2017
+#Wed Jan 25 10:41:48 CET 2017
 base.0=/home/mati/Documentos/PMM/ProyectoTrimestral/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_00ef94a603f5e8be17790f45038a3db6c6777621
 renamed.1=classes.dex
 renamed.0=classes2.dex
