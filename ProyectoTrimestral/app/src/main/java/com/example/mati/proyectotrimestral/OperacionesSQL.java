@@ -6,12 +6,8 @@ import android.widget.EditText;
 
 public class OperacionesSQL {
     protected static void insert_usuarios(SQLiteDatabase sqLiteDatabase, Usuarios user){
-        try{
             sqLiteDatabase.execSQL("INSERT INTO usuarios (name, surname, username, password, email) VALUES " +
                     "('"+user.getNombre()+"', '"+user.getApellidos()+"', '"+user.getUsername()+"', '"+user.getPassword()+"'" +
                     ", '"+user.getCorreo()+"')");
-        }catch (SQLiteException e){
-
-        }
     }
 }

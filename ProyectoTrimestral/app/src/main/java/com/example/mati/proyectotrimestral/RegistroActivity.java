@@ -2,6 +2,7 @@ package com.example.mati.proyectotrimestral;
 
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -10,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.example.mati.proyectotrimestral.OperacionesSQL;
 
@@ -44,7 +46,14 @@ public class RegistroActivity extends AppCompatActivity {
                 Usuarios user = new Usuarios(nombre.getText().toString(), apellidos.getText().toString(),
                         username.getText().toString(), password.getText().toString(), correo.getText().toString());
                 sqLiteDatabase = bdTareasSQLiteHelper.getWritableDatabase();
-                operacionesSQL.insert_usuarios(sqLiteDatabase, user);
+                TextView mensaje = (TextView)findViewById(R.id.mensajeerror);
+               try{
+                   operacionesSQL.insert_usuarios(sqLiteDatabase, user);
+                   mensaje.setText("Te has registrado satisfactoriamente");
+               }catch (SQLiteException e){
+                  mensaje.setText("El usuario o el correor que ha añadido ya ha sido registrado");
+               }
+               bdTareasSQLiteHelper.close();
             }
         });
     }
