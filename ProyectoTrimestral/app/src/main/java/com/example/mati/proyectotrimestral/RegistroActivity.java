@@ -16,7 +16,7 @@ import android.widget.TextView;
 import com.example.mati.proyectotrimestral.OperacionesSQL;
 
 public class RegistroActivity extends AppCompatActivity {
-    BdTareasSQLiteHelper bdTareasSQLiteHelper = new BdTareasSQLiteHelper(this, "dbTareas", null, 1);
+    BdTareasSQLiteHelper bdTareasSQLiteHelper = new BdTareasSQLiteHelper(this, "DBTareas.bd", null, 1);
     SQLiteDatabase sqLiteDatabase;
     OperacionesSQL operacionesSQL;
     @Override
@@ -49,9 +49,16 @@ public class RegistroActivity extends AppCompatActivity {
                 TextView mensaje = (TextView)findViewById(R.id.mensajeerror);
                try{
                    operacionesSQL.insert_usuarios(sqLiteDatabase, user);
-                   mensaje.setText("Te has registrado satisfactoriamente");
+                   Intent volver = new Intent(RegistroActivity.this, LogginActivity.class);
+                   setResult(RESULT_OK, volver);
+                   finish();
                }catch (SQLiteException e){
-                  mensaje.setText("El usuario o el correor que ha añadido ya ha sido registrado");
+                   mensaje.setText("El usuario o el correo que ha añadido ya ha sido registrado");
+                   nombre.setText("");
+                   apellidos.setText("");
+                   username.setText("");
+                   password.setText("");
+                   correo.setText("");
                }
                bdTareasSQLiteHelper.close();
             }

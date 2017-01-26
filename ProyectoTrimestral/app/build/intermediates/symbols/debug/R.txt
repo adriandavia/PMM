@@ -609,9 +609,9 @@ int id remail 0x7f0b0075
 int id right_icon 0x7f0b0089
 int id right_side 0x7f0b0082
 int id rnombre 0x7f0b006e
-int id runirse 0x7f0b0076
+int id runirse 0x7f0b0077
 int id rusuario 0x7f0b0070
-int id rvolver 0x7f0b0077
+int id rvolver 0x7f0b0076
 int id screen 0x7f0b0015
 int id scrollIndicatorDown 0x7f0b0036
 int id scrollIndicatorUp 0x7f0b0032

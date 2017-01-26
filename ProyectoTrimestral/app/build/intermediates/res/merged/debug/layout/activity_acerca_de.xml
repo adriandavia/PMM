@@ -111,5 +111,6 @@
         android:fontFamily="sans-serif"
         android:typeface="serif"
         android:layout_alignTop="@+id/adversion"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/adversion" />
 </RelativeLayout>

@@ -19,7 +19,7 @@ public class LogginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loggin);
 
-        BdTareasSQLiteHelper bdHelper = new BdTareasSQLiteHelper(this, "dbTareas", null, 1);
+        BdTareasSQLiteHelper bdHelper = new BdTareasSQLiteHelper(this, "DBTareas.bd", null, 1);
         SQLiteDatabase bd = bdHelper.getWritableDatabase();
 
         Button pasar = (Button)findViewById(R.id.registrar);
@@ -28,6 +28,7 @@ public class LogginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(LogginActivity.this, RegistroActivity.class);
                 startActivityForResult(intent, COD_RESPUESTA);
+                finish();
             }
         });
     }

@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.database.sqlite.SQLiteOpenHelper;
 
 public class BdTareasSQLiteHelper extends SQLiteOpenHelper {
-
+    //CREAR TABLAS NADA MAS CREAR LA BASE DE DATOS, SI NO, NO INSERTARA MAS TABLAS
     public BdTareasSQLiteHelper(Context context, String nombre, CursorFactory almacen, int version){
         super (context, nombre, almacen, version);
     }
@@ -18,15 +18,16 @@ public class BdTareasSQLiteHelper extends SQLiteOpenHelper {
                 "surname text not null," +
                 "username text primary key," +
                 "password text not null," +
-                "email text" +
-                "UNIQUE (username))");
+                "email text," +
+                "UNIQUE (username, email))");
         sqLiteDatabase.execSQL("CREATE TABLE tareas (" +
-                "id_task text primary key AUTOINCREMENT," +
+                "id_task integer primary key AUTOINCREMENT," +
                 "date_task text not null," +
                 "name_task text not null," +
                 "description text," +
                 "state boolean DEFAULT false," +
-                "username text FOREIGN KEY REFERENCES usuarios(username))" );
+                "username text not null," +
+                " FOREIGN KEY (username) REFERENCES usuarios(username) ON DELETE CASCADE)" );
     }
 
     @Override

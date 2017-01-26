@@ -1927,9 +1927,9 @@ containing a value of this type.
         public static final int right_icon=0x7f0b0089;
         public static final int right_side=0x7f0b0082;
         public static final int rnombre=0x7f0b006e;
-        public static final int runirse=0x7f0b0076;
+        public static final int runirse=0x7f0b0077;
         public static final int rusuario=0x7f0b0070;
-        public static final int rvolver=0x7f0b0077;
+        public static final int rvolver=0x7f0b0076;
         public static final int screen=0x7f0b0015;
         public static final int scrollIndicatorDown=0x7f0b0036;
         public static final int scrollIndicatorUp=0x7f0b0032;
