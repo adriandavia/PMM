@@ -1,6 +1,8 @@
 package com.example.mati.proyectotrimestral;
 
-public class Usuarios {
+import java.io.Serializable;
+
+public class Usuarios implements Serializable{
     private String nombre;
     private String apellidos;
     private String username;

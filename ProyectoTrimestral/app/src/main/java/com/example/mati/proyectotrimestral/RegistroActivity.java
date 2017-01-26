@@ -24,6 +24,10 @@ public class RegistroActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
 
+        //Titulo de la pantalla
+        getSupportActionBar().setTitle("Registro");
+
+        //Boton volver a la pantalla loggin
         Button pasar = (Button)findViewById(R.id.rvolver);
         pasar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,18 +37,25 @@ public class RegistroActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        //boton registrar
         Button registrar = (Button)findViewById(R.id.runirse);
         registrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                //recogemos datos edittext
                 EditText nombre = (EditText)findViewById(R.id.rnombre);
                 EditText apellidos = (EditText)findViewById(R.id.rapellidos);
                 EditText username = (EditText)findViewById(R.id.rusuario);
                 EditText password = (EditText)findViewById(R.id.rcontraseña);
                 EditText correo = (EditText)findViewById(R.id.remail);
 
+                //creamos un objeto de la clase usuario
                 Usuarios user = new Usuarios(nombre.getText().toString(), apellidos.getText().toString(),
                         username.getText().toString(), password.getText().toString(), correo.getText().toString());
+
+                //abrirmos la base de datos en modo escritura
                 sqLiteDatabase = bdTareasSQLiteHelper.getWritableDatabase();
                 TextView mensaje = (TextView)findViewById(R.id.mensajeerror);
                try{

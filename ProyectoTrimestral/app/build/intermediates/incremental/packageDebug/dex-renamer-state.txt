@@ -1,7 +1,7 @@
-#Thu Jan 26 12:08:45 CET 2017
-base.0=/home/mati/Documentos/PMM/ProyectoTrimestral/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_00ef94a603f5e8be17790f45038a3db6c6777621
-renamed.1=classes.dex
-renamed.0=classes2.dex
-file.1=/home/mati/Documentos/PMM/ProyectoTrimestral/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_25668fb29c6e9cedebbcf38a26a8cfbd394536a1/classes.dex
-base.1=/home/mati/Documentos/PMM/ProyectoTrimestral/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_25668fb29c6e9cedebbcf38a26a8cfbd394536a1
-file.0=/home/mati/Documentos/PMM/ProyectoTrimestral/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_00ef94a603f5e8be17790f45038a3db6c6777621/classes.dex
+#Thu Jan 26 19:26:39 CET 2017
+base.0=/home/adrian/Documentos/PMM/ProyectoTrimestral/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_8af479f87b0242556db37b72eb78380afa143819
+renamed.1=classes2.dex
+renamed.0=classes.dex
+file.1=/home/adrian/Documentos/PMM/ProyectoTrimestral/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_66c1f1b0991ef68b65ea155521fca252a032430c/classes.dex
+base.1=/home/adrian/Documentos/PMM/ProyectoTrimestral/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_66c1f1b0991ef68b65ea155521fca252a032430c
+file.0=/home/adrian/Documentos/PMM/ProyectoTrimestral/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_8af479f87b0242556db37b72eb78380afa143819/classes.dex

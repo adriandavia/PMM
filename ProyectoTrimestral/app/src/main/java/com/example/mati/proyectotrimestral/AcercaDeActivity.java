@@ -12,6 +12,7 @@ public class AcercaDeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_acerca_de);
 
+        getSupportActionBar().setTitle("Acerca de");
         Button volver = (Button)findViewById(R.id.advolver);
         volver.setOnClickListener(new View.OnClickListener() {
             @Override

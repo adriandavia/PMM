@@ -23,10 +23,14 @@ public class LogginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_loggin);
         //Titulo de la pantalla
         getSupportActionBar().setTitle("Loggin");
-        BdTareasSQLiteHelper bdHelper = new BdTareasSQLiteHelper(this, "dbTareas", null, 1);
-        final SQLiteDatabase bd = bdHelper.getWritableDatabase();
+
+        //Creamos la base de datos
+        final BdTareasSQLiteHelper bdHelper = new BdTareasSQLiteHelper(this, "dbTareas", null, 1);
+
+        //Objeto de la case operacion para poder usar sus metodos
         final OperacionesSQL operacionesSQL = new OperacionesSQL();
 
+        //Boton con callbak para ir a la pantalla registro
         Button pasar = (Button)findViewById(R.id.registrar);
         pasar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,10 +40,15 @@ public class LogginActivity extends AppCompatActivity {
             }
         });
 
+        //boton entrar. Nos permite comprobar todos los datos de la tabla usuarios
+        //habia un problema con los mensajes de error, por que lo que neceisto un boolean para
+        //solucionarlo
         Button entrar = (Button)findViewById(R.id.entrar);
         entrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //Abrimos la base de datos en modo escritura
+                final SQLiteDatabase bd = bdHelper.getReadableDatabase();
                 EditText usuario = (EditText)findViewById(R.id.usuario);
                 EditText contraseña = (EditText)findViewById(R.id.password);
 
@@ -50,17 +59,25 @@ public class LogginActivity extends AppCompatActivity {
                 boolean error = true;
                 if (cursor.moveToFirst()){
                     do {
+                        String name = cursor.getString(0);
+                        String surname = cursor.getString(1);
                         String us = cursor.getString(2);
                         String pass = cursor.getString(3);
+                        String email = cursor.getString(4);
                         if (user.equals(us) && password.equals(pass)){
                             Intent intent = new Intent(LogginActivity.this, TareasDiariasActivity.class);
-                            startActivity(intent);
+                            Usuarios userlogeado = new Usuarios(name, surname, us, pass, email);
+                            Bundle pasarobjetos = new Bundle();
+                            pasarobjetos.putSerializable("usuario", userlogeado);
+                            intent.putExtras(pasarobjetos);
                             error = false;
+                            startActivity(intent);
                             finish();
+                            bdHelper.close();
                         }
                     }while (cursor.moveToNext());
                     if (error){
-                        mensaje.setText("Usuario o correo incorrecto.");
+                        mensaje.setText("Usuario o contraseña incorrecta.");
                         usuario.setText("");
                         contraseña.setText("");
                     }
