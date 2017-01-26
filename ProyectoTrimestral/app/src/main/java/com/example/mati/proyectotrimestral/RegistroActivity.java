@@ -16,7 +16,7 @@ import android.widget.TextView;
 import com.example.mati.proyectotrimestral.OperacionesSQL;
 
 public class RegistroActivity extends AppCompatActivity {
-    BdTareasSQLiteHelper bdTareasSQLiteHelper = new BdTareasSQLiteHelper(this, "DBTareas.bd", null, 1);
+    BdTareasSQLiteHelper bdTareasSQLiteHelper = new BdTareasSQLiteHelper(this, "dbTareas", null, 1);
     SQLiteDatabase sqLiteDatabase;
     OperacionesSQL operacionesSQL;
     @Override

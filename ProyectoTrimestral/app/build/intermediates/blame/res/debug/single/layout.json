@@ -36,6 +36,10 @@
         "source": "/home/mati/Documentos/PMM/ProyectoTrimestral/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/layout/select_dialog_item_material.xml"
     },
     {
+        "merged": "/home/mati/Documentos/PMM/ProyectoTrimestral/app/build/intermediates/res/merged/debug/layout/activity_tareas_diarias.xml",
+        "source": "/home/mati/Documentos/PMM/ProyectoTrimestral/app/src/main/res/layout/activity_tareas_diarias.xml"
+    },
+    {
         "merged": "/home/mati/Documentos/PMM/ProyectoTrimestral/app/build/intermediates/res/merged/debug/layout/abc_select_dialog_material.xml",
         "source": "/home/mati/Documentos/PMM/ProyectoTrimestral/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/layout/abc_select_dialog_material.xml"
     },
