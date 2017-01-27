@@ -1,6 +1,7 @@
 package com.example.mati.proyectotrimestral;
 
 import android.content.Context;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.support.v7.app.AppCompatActivity;
@@ -23,41 +24,20 @@ public class ATareasActivity extends AppCompatActivity {
 
         getSupportActionBar().setTitle("Añadir tareas");
 
-        final BdTareasSQLiteHelper bdHelper = new BdTareasSQLiteHelper(this, "dbTareas", null, 1);
-
-        final OperacionesSQL operacionesSQL = new OperacionesSQL();
-
-        EditText nombre = (EditText)findViewById(R.id.ntarea);
-        EditText fecha = (EditText)findViewById(R.id.ftarea);
-        EditText descripcion = (EditText)findViewById(R.id.dtarea);
-
-        String name = nombre.getText().toString();
-        String dat = fecha.getText().toString();
-        String descrp = descripcion.getText().toString();
         Bundle bundle = getIntent().getExtras();
-        Usuarios user = (Usuarios)bundle.getSerializable("user");
+        Usuarios ousuario = (Usuarios)bundle.getSerializable("usua");
+        final Usuarios usuario = new Usuarios(ousuario.getNombre(), ousuario.getApellidos(), ousuario.getUsername(),
+                ousuario.getPassword(),ousuario.getCorreo());
 
-        //Pasar de string a date
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-        Date fechatask = null;
-        try{
-            fechatask = dateFormat.parse(dat);
-        }catch (ParseException e){
-        }
-
-
-        final Tareas tareas = new Tareas(fechatask, name, descrp, user.getUsername());
-        Button añadir = (Button)findViewById(R.id.añadir);
-        añadir.setOnClickListener(new View.OnClickListener() {
+        Button atras = (Button)findViewById(R.id.atras);
+        atras.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final SQLiteDatabase bd = bdHelper.getReadableDatabase();
-                try{
-                    operacionesSQL.insert_tareas(bd, tareas);
-                }catch (SQLiteException e){
-                    Context context = getApplicationContext();
-                    Toast.makeText(context, "Formate de contraseña incorrecto prueba con dd/MM/yyyy", Toast.LENGTH_SHORT).show();
-                }
+                Intent intent = new Intent(ATareasActivity.this, TareasDiariasActivity.class);
+                Bundle pasar = new Bundle();
+                pasar.putSerializable("u", usuario);
+                startActivity(intent);
+                finish();
             }
         });
     }
