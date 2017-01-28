@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_tareas_diarias"
+    android:id="@+id/tareasdiarias"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
@@ -10,77 +10,81 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.mati.proyectotrimestral.TareasDiariasActivity">
 
-    <Button
-        android:text="Añadir"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/añadir"
-        android:fontFamily="sans-serif"
-        android:typeface="serif"
-        android:textSize="18sp"
-        android:textColor="@android:color/background_light"
-        android:background="@color/colorPrimary"
-        android:textStyle="normal|bold" />
-
-    <Button
-        android:text="Completar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/completar"
-        android:fontFamily="sans-serif"
-        android:textSize="18sp"
-        android:textColor="@android:color/background_light"
-        android:typeface="serif"
-        android:background="@color/colorPrimary"
-        android:textStyle="normal|bold" />
-
-    <Button
-        android:text="Ver"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/completar"
-        android:layout_alignParentEnd="true"
-        android:id="@+id/ver"
-        android:background="@color/colorPrimary"
-        android:fontFamily="sans-serif"
-        android:textSize="18sp"
-        android:typeface="serif"
-        android:textColor="@android:color/background_light"
-        android:textStyle="normal|bold" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/añadir"
-        android:layout_alignParentStart="true"
-        android:id="@+id/textView11"
-        android:layout_alignParentEnd="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/nombredusuario"
-        android:layout_alignParentEnd="true"
-        android:textStyle="normal|bold"
-        android:textAlignment="textStart"
-        android:textSize="18sp"
-        android:textColor="@color/colorAccent"
-        android:fontFamily="sans-serif"
-        android:typeface="serif" />
-
-    <ListView
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/nombredusuario"
-        android:layout_alignParentStart="true"
-        android:layout_above="@+id/textView11"
-        android:layout_alignParentEnd="true"
-        android:id="@+id/listView" />
+        android:id="@+id/invisibilidad">
+        <Button
+            android:text="Añadir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/añadir"
+            android:fontFamily="sans-serif"
+            android:typeface="serif"
+            android:textSize="18sp"
+            android:textColor="@android:color/background_light"
+            android:background="@color/colorPrimary"
+            android:textStyle="normal|bold" />
 
+        <Button
+            android:text="Completar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/completar"
+            android:fontFamily="sans-serif"
+            android:textSize="18sp"
+            android:textColor="@android:color/background_light"
+            android:typeface="serif"
+            android:background="@color/colorPrimary"
+            android:textStyle="normal|bold" />
+
+        <Button
+            android:text="Ver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/completar"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/ver"
+            android:background="@color/colorPrimary"
+            android:fontFamily="sans-serif"
+            android:textSize="18sp"
+            android:typeface="serif"
+            android:textColor="@android:color/background_light"
+            android:textStyle="normal|bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/añadir"
+            android:layout_alignParentStart="true"
+            android:id="@+id/textView11"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/nombredusuario"
+            android:layout_alignParentEnd="true"
+            android:textStyle="normal|bold"
+            android:textAlignment="textStart"
+            android:textSize="18sp"
+            android:textColor="@color/colorAccent"
+            android:fontFamily="sans-serif"
+            android:typeface="serif" />
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/nombredusuario"
+            android:layout_alignParentStart="true"
+            android:layout_above="@+id/textView11"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/listView" />
+    </RelativeLayout>
 </RelativeLayout>

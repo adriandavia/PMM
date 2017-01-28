@@ -22,7 +22,7 @@ public class BdTareasSQLiteHelper extends SQLiteOpenHelper {
                 "UNIQUE (username, email))");
         sqLiteDatabase.execSQL("CREATE TABLE tareas (" +
                 "id_task integer primary key AUTOINCREMENT," +
-                "date_task date not null," +
+                "date_task text not null," +
                 "name_task text not null," +
                 "description text," +
                 "state boolean DEFAULT false," +

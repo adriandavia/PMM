@@ -25,16 +25,7 @@ public class OperacionesSQL {
                 "('"+tareas.getFecha()+", '"+tareas.getNombre()+" ,'"+tareas.getDescripcion()+", " +
                 "'"+tareas.getUsername()+"')");
     }
-    protected static Cursor select_tareas(SQLiteDatabase sqLiteDatabase, Usuarios username){
-        //Para sacar la fecha acutal
-        Date date = new Date();
-        String hora = (date.getDate())+"/"+(date.getMonth()+1)+"/"+(date.getYear()+1900);
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-        Date fechaactual = null;
-        try{
-            fechaactual = dateFormat.parse(hora);
-        }catch (ParseException e){
-        }
+    protected static Cursor select_tareas(SQLiteDatabase sqLiteDatabase, Usuarios username, Date fechaactual){
         return sqLiteDatabase.rawQuery("SELECT name_task, date_task, description FROM tareas where username = " +
                 "'"+username.getUsername()+"' and state = false and date_task = "+fechaactual+";", null);
     }

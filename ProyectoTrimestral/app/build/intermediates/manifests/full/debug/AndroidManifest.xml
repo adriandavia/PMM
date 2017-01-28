@@ -24,7 +24,6 @@
         <activity android:name="com.example.mati.proyectotrimestral.RegistroActivity" />
         <activity android:name="com.example.mati.proyectotrimestral.AcercaDeActivity" />
         <activity android:name="com.example.mati.proyectotrimestral.TareasDiariasActivity" />
-        <activity android:name="com.example.mati.proyectotrimestral.ATareasActivity" />
     </application>
 
 </manifest>
