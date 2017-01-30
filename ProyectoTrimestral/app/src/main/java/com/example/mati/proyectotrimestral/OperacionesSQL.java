@@ -15,18 +15,18 @@ public class OperacionesSQL {
     protected static void insert_usuarios(SQLiteDatabase sqLiteDatabase, Usuarios user){
             sqLiteDatabase.execSQL("INSERT INTO usuarios (name, surname, username, password, email) VALUES " +
                     "('"+user.getNombre()+"', '"+user.getApellidos()+"', '"+user.getUsername()+"', '"+user.getPassword()+"'" +
-                    ", '"+user.getCorreo()+"')");
+                    ", '"+user.getCorreo()+"');");
     }
     protected static Cursor select_usuarios(SQLiteDatabase sqLiteDatabase){
         return sqLiteDatabase.rawQuery("SELECT * from usuarios;", null);
     }
     protected static void insert_tareas(SQLiteDatabase sqLiteDatabase, Tareas tareas){
         sqLiteDatabase.execSQL("INSERT INTO tareas (date_task, name_task, description, username) VALUES " +
-                "('"+tareas.getFecha()+", '"+tareas.getNombre()+" ,'"+tareas.getDescripcion()+", " +
-                "'"+tareas.getUsername()+"')");
+                "('"+tareas.getFecha()+"', '"+tareas.getNombre()+"' ,'"+tareas.getDescripcion()+"', " +
+                "'"+tareas.getUsername()+"');");
     }
-    protected static Cursor select_tareas(SQLiteDatabase sqLiteDatabase, Usuarios username, Date fechaactual){
-        return sqLiteDatabase.rawQuery("SELECT name_task, date_task, description FROM tareas where username = " +
-                "'"+username.getUsername()+"' and state = false and date_task = "+fechaactual+";", null);
+    protected static Cursor select_tareas(SQLiteDatabase sqLiteDatabase, String username, String fechaactual){
+        return sqLiteDatabase.rawQuery("SELECT name_task, date_task, description, username FROM tareas where username = " +
+                "'"+username+"' and state = 'false' and date_task = '"+fechaactual+"';", null);
     }
 }

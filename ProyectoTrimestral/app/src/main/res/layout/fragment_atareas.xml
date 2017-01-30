@@ -48,52 +48,6 @@
         android:typeface="serif"
         android:fontFamily="sans-serif" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="date"
-        android:ems="10"
-        android:layout_alignTop="@+id/textView4"
-        android:id="@+id/ftarea"
-        android:layout_alignParentEnd="true"
-        android:layout_toEndOf="@+id/textView4"
-        android:fontFamily="sans-serif"
-        android:typeface="serif"
-        android:textAlignment="textStart"
-        android:textColor="@color/colorAccent"
-        android:textSize="14sp" />
-
-    <TextView
-        android:text="Descripción:"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/ftarea"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="40dp"
-        android:id="@+id/textView8"
-        android:layout_alignParentEnd="true"
-        android:textSize="30sp"
-        android:textStyle="normal|bold"
-        android:textAlignment="center"
-        android:textColor="@color/colorAccent"
-        android:typeface="serif"
-        android:fontFamily="sans-serif" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/dtarea"
-        android:textSize="14sp"
-        android:fontFamily="sans-serif"
-        android:typeface="serif"
-        android:textColor="@color/colorAccent"
-        android:layout_below="@+id/textView8"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:textAlignment="textStart" />
-
     <Button
         android:text="Añadir"
         android:layout_width="wrap_content"
@@ -122,6 +76,47 @@
         android:fontFamily="sans-serif"
         android:typeface="serif"
         android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/dtarea"
+        android:textSize="14sp"
+        android:fontFamily="sans-serif"
+        android:typeface="serif"
+        android:textColor="@color/colorAccent"
+        android:textAlignment="textStart"
+        android:layout_below="@+id/textView8"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="date"
+        android:ems="10"
+        android:layout_alignTop="@+id/textView4"
+        android:id="@+id/ftarea"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/textView4" />
+
+    <TextView
+        android:text="Descripción:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView8"
+        android:textSize="30sp"
+        android:textStyle="normal|bold"
+        android:textAlignment="center"
+        android:textColor="@color/colorAccent"
+        android:typeface="serif"
+        android:fontFamily="sans-serif"
+        android:layout_below="@+id/ftarea"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="18dp"
         android:layout_alignParentEnd="true" />
 
 </RelativeLayout>

@@ -70,21 +70,38 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentStart="true"
             android:id="@+id/nombredusuario"
-            android:layout_alignParentEnd="true"
             android:textStyle="normal|bold"
             android:textAlignment="textStart"
             android:textSize="18sp"
             android:textColor="@color/colorAccent"
             android:fontFamily="sans-serif"
-            android:typeface="serif" />
+            android:typeface="serif"
+            android:layout_toStartOf="@+id/completar"
+            android:text="Usuario:" />
+
+        <TextView
+            android:text="Fecha: "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/f"
+            android:layout_toEndOf="@+id/nombredusuario"
+            android:textSize="18sp"
+            android:typeface="serif"
+            android:fontFamily="sans-serif"
+            android:textStyle="normal|bold"
+            android:textColor="@color/colorAccent"
+            android:textAlignment="textEnd" />
 
         <ListView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@+id/nombredusuario"
+            android:layout_alignParentTop="true"
             android:layout_alignParentStart="true"
+            android:layout_marginTop="28dp"
             android:layout_above="@+id/textView11"
-            android:layout_alignParentEnd="true"
-            android:id="@+id/listView" />
+            android:id="@+id/listatareas" />
+
     </RelativeLayout>
 </RelativeLayout>

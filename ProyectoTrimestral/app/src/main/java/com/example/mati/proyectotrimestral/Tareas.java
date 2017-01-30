@@ -19,15 +19,12 @@ public class Tareas implements Serializable{
     public String getFecha() {
         return fecha;
     }
-
     public String getNombre() {
         return nombre;
     }
-
     public String getDescripcion() {
         return descripcion;
     }
-
     public String getUsername() {
         return username;
     }

@@ -2,6 +2,7 @@ package com.example.mati.proyectotrimestral;
 
 import android.app.Activity;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.ParseException;
 import android.net.Uri;
@@ -14,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
@@ -22,7 +24,6 @@ import java.util.Date;
 
 public class ATareas extends Fragment {
     private OnFragmentInteractionListener mListener;
-
     Activity activity;
     public ATareas() {
     }
@@ -36,37 +37,34 @@ public class ATareas extends Fragment {
         final BdTareasSQLiteHelper bdHelper = new BdTareasSQLiteHelper(getActivity().getApplicationContext()
                 , "dbTareas", null, 1);
         final SQLiteDatabase sqLiteDatabase = bdHelper.getWritableDatabase();
+        final OperacionesSQL operacionesSQL = new OperacionesSQL();
+
         Button añadir = (Button)view.findViewById(R.id.añadirt);
         Button volver = (Button)view.findViewById(R.id.atras);
 
         final Bundle objetos = getArguments();
+        final EditText nombre = (EditText) view.findViewById(R.id.ntarea);
+        final EditText ftarea = (EditText) view.findViewById(R.id.ftarea);
+        final EditText descripcion = (EditText) view.findViewById(R.id.dtarea);
+        final Usuarios usuarios = (Usuarios) objetos.getSerializable("usuario");
 
         añadir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                EditText nombre = (EditText) view.findViewById(R.id.ntarea);
-                EditText efecha = (EditText) view.findViewById(R.id.ftarea);
-                EditText descripcion = (EditText) view.findViewById(R.id.dtarea);
-
-                Usuarios usuarios = (Usuarios) objetos.getSerializable("usuario");
-                String fechaactual = objetos.getString("fecha");
-
-                //Convertimos la fecha en un objeto Date
-                String fecha = efecha.getText().toString();
+                String fecha = ftarea.getText().toString();
                 Tareas tareas = new Tareas(fecha, nombre.getText().toString(), descripcion.getText().toString(), usuarios.getUsername());
-                OperacionesSQL operacionesSQL = new OperacionesSQL();
                 try {
                     operacionesSQL.insert_tareas(sqLiteDatabase, tareas);
                     Toast.makeText(getActivity().getApplicationContext(), "Tarea añadida correctamente" +
                             "", Toast.LENGTH_SHORT).show();
                     nombre.setText("");
-                    efecha.setText("");
+                    ftarea.setText("");
                     descripcion.setText("");
                 } catch (Exception e) {
                     Toast.makeText(getActivity().getApplicationContext(), "Error al introducir la tarea" +
                             "", Toast.LENGTH_SHORT).show();
                     nombre.setText("");
-                    efecha.setText("");
+                    ftarea.setText("");
                     descripcion.setText("");
                 }
             }
@@ -75,10 +73,10 @@ public class ATareas extends Fragment {
         volver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                sqLiteDatabase.close();
                 layout.setVisibility(View.INVISIBLE);
                 View tareasDiariasActivity = getActivity().getWindow().findViewById(R.id.invisibilidad);
                 tareasDiariasActivity.setVisibility(View.VISIBLE);
+
 
             }
         });
