@@ -1,0 +1,68 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.mati.proyectotrimestral.DialogFragment">
+
+    <Button
+        android:text="Completar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="65dp"
+        android:id="@+id/completar"
+        android:textStyle="normal|bold"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_light"
+        android:textSize="18sp"
+        android:fontFamily="sans-serif"
+        android:typeface="serif"
+        android:background="@color/colorPrimary" />
+
+    <Button
+        android:text="Atras"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/atras"
+        android:textColor="@android:color/background_light"
+        android:textSize="18sp"
+        android:fontFamily="sans-serif"
+        android:typeface="serif"
+        android:background="@color/colorPrimary"
+        android:textStyle="normal|bold"
+        android:layout_alignBaseline="@+id/borrar"
+        android:layout_alignBottom="@+id/borrar"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:text="Borrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/borrar"
+        android:textColor="@android:color/background_light"
+        android:textStyle="normal|bold"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:fontFamily="sans-serif"
+        android:typeface="serif"
+        android:background="@color/colorPrimary"
+        android:layout_alignBaseline="@+id/completar"
+        android:layout_alignBottom="@+id/completar"
+        android:layout_toStartOf="@+id/atras"
+        android:layout_marginEnd="44dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/completar"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="110dp"
+        android:id="@+id/descripcion"
+        android:layout_alignParentEnd="true"
+        android:textSize="18sp"
+        android:fontFamily="sans-serif"
+        android:typeface="serif"
+        android:textColor="@color/colorAccent"
+        android:textAlignment="textStart" />
+</RelativeLayout>

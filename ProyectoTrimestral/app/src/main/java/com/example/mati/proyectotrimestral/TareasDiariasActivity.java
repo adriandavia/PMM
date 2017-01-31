@@ -1,8 +1,6 @@
 package com.example.mati.proyectotrimestral;
 
-import android.app.Activity;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
+import android.app.*;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -15,6 +13,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -88,6 +87,7 @@ public class TareasDiariasActivity extends AppCompatActivity implements ATareas.
         TextView f = (TextView)findViewById(R.id.f);
         f.setText(f.getText() + " " + fechaactual);
 
+       final FragmentManager fragmentManager = getFragmentManager();
         Button añadir = (Button)findViewById(R.id.añadir);
         añadir.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -101,7 +101,7 @@ public class TareasDiariasActivity extends AppCompatActivity implements ATareas.
                 layout.setVisibility(View.INVISIBLE);
 
                 //obtenemos la instacion del administrador de fragmentos
-                FragmentManager fragmentManager = getFragmentManager();
+
                 //creamos la transaccion
                 FragmentTransaction transaction = fragmentManager.beginTransaction();
                 //creamos el objeto dle fragment
@@ -112,6 +112,13 @@ public class TareasDiariasActivity extends AppCompatActivity implements ATareas.
                 transaction.add(R.id.tareasdiarias, fragmento);
                 //confirmamos el cambio
                 transaction.commit();
+            }
+        });
+        final DialogFragment dialogFragment = new DialogFragment();
+        tareas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                dialogFragment.show(fragmentManager, "hola");
             }
         });
     }
