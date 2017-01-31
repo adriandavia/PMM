@@ -1,44 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <instant-run
-    abi="x86_64,x86"
+    abi="x86"
     api-level="24"
     density="420dpi"
     format="8"
     plugin-version="2.2.2"
-    timestamp="15225579910516"
-    token="-8863888965770345151"
-    verifier="COMPATIBLE" >
+    timestamp="2525423282512"
+    token="-5905808962892521051"
+    verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
-        duration="118" />
+        duration="336" />
     <task
         name="instant-run-dex"
-        duration="88" />
+        duration="0" />
     <task
         name="instant-run-transform"
-        duration="19" />
+        duration="124" />
     <task
         name="verifier"
-        duration="24" />
+        duration="7" />
 
     <artifact
-        location="/home/mati/Adrian/PMM/ProyectoTrimestral/app/build/intermediates/reload-dex/debug/classes.dex"
-        type="RELOAD_DEX" />
+        location="/home/mati/Documentos/PMM/ProyectoTrimestral/app/build/outputs/apk/app-debug.apk"
+        type="MAIN" />
 
     <build
-        timestamp="15114446224731"
+        timestamp="2525423282512"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="/home/mati/Adrian/PMM/ProyectoTrimestral/app/build/outputs/apk/app-debug.apk"
+            location="/home/mati/Documentos/PMM/ProyectoTrimestral/app/build/outputs/apk/app-debug.apk"
             type="MAIN" />
-    </build>
-    <build
-        timestamp="15225579910516"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="/home/mati/Adrian/PMM/ProyectoTrimestral/app/build/intermediates/reload-dex/debug/classes.dex"
-            type="RELOAD_DEX" />
     </build>
 
 </instant-run>

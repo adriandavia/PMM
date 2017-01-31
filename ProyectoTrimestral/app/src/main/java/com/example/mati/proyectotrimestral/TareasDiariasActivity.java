@@ -29,7 +29,7 @@ import java.util.Date;
 import static com.example.mati.proyectotrimestral.R.id.añadir;
 
 public class TareasDiariasActivity extends AppCompatActivity implements ATareas.OnFragmentInteractionListener{
-    private Tareas[] datos;
+    protected Tareas[] datos;
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

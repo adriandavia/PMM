@@ -43,12 +43,12 @@
             android:textStyle="normal|bold" />
 
         <Button
-            android:text="Ver"
+            android:text="Borrar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignTop="@+id/completar"
             android:layout_alignParentEnd="true"
-            android:id="@+id/ver"
+            android:id="@+id/borrar"
             android:background="@color/colorPrimary"
             android:fontFamily="sans-serif"
             android:textSize="18sp"
