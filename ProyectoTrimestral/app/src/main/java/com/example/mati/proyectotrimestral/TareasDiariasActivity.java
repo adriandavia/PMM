@@ -87,7 +87,8 @@ public class TareasDiariasActivity extends AppCompatActivity implements ATareas.
         TextView f = (TextView)findViewById(R.id.f);
         f.setText(f.getText() + " " + fechaactual);
 
-       final FragmentManager fragmentManager = getFragmentManager();
+        //obtenemos la instacion del administrador de fragmentos
+        final FragmentManager fragmentManager = getFragmentManager();
         Button añadir = (Button)findViewById(R.id.añadir);
         añadir.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -99,8 +100,6 @@ public class TareasDiariasActivity extends AppCompatActivity implements ATareas.
                 //Hacemos invisible el segundo layout para poder ver solamente el fragment
                 RelativeLayout layout = (RelativeLayout)findViewById(R.id.invisibilidad);
                 layout.setVisibility(View.INVISIBLE);
-
-                //obtenemos la instacion del administrador de fragmentos
 
                 //creamos la transaccion
                 FragmentTransaction transaction = fragmentManager.beginTransaction();
@@ -118,7 +117,11 @@ public class TareasDiariasActivity extends AppCompatActivity implements ATareas.
         tareas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                dialogFragment.show(fragmentManager, "hola");
+                Bundle paso = new Bundle();
+                paso.putString("nombre", datos[i].getNombre());
+                paso.putString("descripcion", datos[i].getDescripcion());
+                dialogFragment.setArguments(paso);
+                dialogFragment.show(fragmentManager, "Tarea seleccionada");
             }
         });
     }
