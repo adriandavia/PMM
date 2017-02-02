@@ -5,29 +5,29 @@
     density="420dpi"
     format="8"
     plugin-version="2.2.2"
-    timestamp="4575014154225"
+    timestamp="326468908698"
     token="-5905808962892521051"
     verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
-        duration="166" />
+        duration="6442" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="102" />
+        duration="834" />
     <task
         name="verifier"
-        duration="4" />
+        duration="7" />
 
     <artifact
         location="/home/mati/Documentos/PMM/ProyectoTrimestral/app/build/outputs/apk/app-debug.apk"
         type="MAIN" />
 
     <build
-        timestamp="4575014154225"
+        timestamp="326468908698"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="/home/mati/Documentos/PMM/ProyectoTrimestral/app/build/outputs/apk/app-debug.apk"
