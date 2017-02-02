@@ -4,6 +4,7 @@ import android.app.*;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -39,7 +40,7 @@ public class TareasDiariasActivity extends AppCompatActivity implements ATareas.
         getSupportActionBar().setTitle("Tareas");
 
         Bundle bundle = getIntent().getExtras();
-        Usuarios us = (Usuarios)bundle.getSerializable("usuario");
+        final Usuarios us = (Usuarios)bundle.getSerializable("usuario");
         final Usuarios pasarusu = new Usuarios(us.getNombre(), us.getApellidos(), us.getUsername(), us.getPassword(), us.getCorreo());
         final String usu = us.getUsername();
 
@@ -68,14 +69,14 @@ public class TareasDiariasActivity extends AppCompatActivity implements ATareas.
         int i = 0;
         if (cursor.moveToFirst()) {
             do {
-                String fechat = cursor.getString(0);
-                String nombre = cursor.getString(1);
-                String descripcion = cursor.getString(2);
-                datos[i] = new Tareas(nombre, fechat, descripcion, us.getUsername());
+                Integer id = Integer.parseInt(cursor.getString(0));
+                String fechat = cursor.getString(1);
+                String nombre = cursor.getString(2);
+                String descripcion = cursor.getString(3);
+                datos[i] = new Tareas(id, nombre, fechat, descripcion, us.getUsername());
                 i++;
             } while (cursor.moveToNext());
         }
-
         //Llamamos a adaptador
         AdaptadorTareas adaptador = new AdaptadorTareas(this);
         ListView tareas = (ListView) findViewById(R.id.listatareas);
@@ -117,7 +118,23 @@ public class TareasDiariasActivity extends AppCompatActivity implements ATareas.
         tareas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Cursor cursor = operacionesSQL.select_tareas(bd, us.getUsername(), fechaactual);
+                datos = new Tareas[cursor.getCount()];
+                int count = 0;
+                if (cursor.moveToFirst()) {
+                    do {
+                        Integer id = Integer.parseInt(cursor.getString(0));
+                        String fechat = cursor.getString(1);
+                        String nombre = cursor.getString(2);
+                        String descripcion = cursor.getString(3);
+                        datos[count] = new Tareas(id, nombre, fechat, descripcion, us.getUsername());
+                        count++;
+                    } while (cursor.moveToNext());
+                }
+
                 Bundle paso = new Bundle();
+                paso.putString("usuario", datos[i].getUsername());
+                paso.putInt("id", datos[i].getId());
                 paso.putString("nombre", datos[i].getNombre());
                 paso.putString("descripcion", datos[i].getDescripcion());
                 dialogFragment.setArguments(paso);

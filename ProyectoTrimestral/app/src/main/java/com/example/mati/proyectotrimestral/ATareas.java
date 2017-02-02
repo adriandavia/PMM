@@ -82,9 +82,9 @@ public class ATareas extends Fragment {
                 int i = 0;
                 if (cursor.moveToFirst()) {
                     do {
-                        String fechat = cursor.getString(0);
-                        String nombre = cursor.getString(1);
-                        String descripcion = cursor.getString(2);
+                        String fechat = cursor.getString(1);
+                        String nombre = cursor.getString(2);
+                        String descripcion = cursor.getString(3);
                         tareasDiarias.datos[i] = new Tareas(nombre, fechat, descripcion, usuarios.getUsername());
                         i++;
                     } while (cursor.moveToNext());

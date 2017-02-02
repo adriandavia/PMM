@@ -26,7 +26,13 @@ public class OperacionesSQL {
                 "'"+tareas.getUsername()+"');");
     }
     protected static Cursor select_tareas(SQLiteDatabase sqLiteDatabase, String username, String fechaactual){
-        return sqLiteDatabase.rawQuery("SELECT name_task, date_task, description, username FROM tareas where username = " +
+        return sqLiteDatabase.rawQuery("SELECT id, name_task, date_task, description, username FROM tareas where username = " +
                 "'"+username+"' and state = 'false' and date_task = '"+fechaactual+"';", null);
+    }
+    protected static void update_tarea(SQLiteDatabase sqLiteDatabase, Integer id){
+        sqLiteDatabase.execSQL("UPDATE tareas set state = 'true' where id = "+id+";");
+    }
+    protected static void delete_tarea(SQLiteDatabase sqLiteDatabase, Integer id){
+        sqLiteDatabase.execSQL("DELETE from tareas where id = '"+id+"';");
     }
 }
