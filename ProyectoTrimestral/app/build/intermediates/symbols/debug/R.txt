@@ -552,9 +552,9 @@ int id advolver 0x7f0b005a
 int id alertTitle 0x7f0b003b
 int id always 0x7f0b001d
 int id apellidos 0x7f0b006f
-int id atras 0x7f0b0083
+int id atras 0x7f0b0086
 int id añadir 0x7f0b0079
-int id añadirt 0x7f0b0082
+int id añadirt 0x7f0b0085
 int id beginning 0x7f0b001a
 int id borrar 0x7f0b008e
 int id bottom 0x7f0b0022
@@ -573,7 +573,7 @@ int id default_activity_button 0x7f0b002a
 int id descripcion 0x7f0b006a
 int id dialog_fragment 0x7f0b0087
 int id disableHome 0x7f0b000c
-int id dtarea 0x7f0b0084
+int id dtarea 0x7f0b0082
 int id edit_query 0x7f0b0049
 int id email 0x7f0b0073
 int id end 0x7f0b001b
@@ -582,7 +582,7 @@ int id entrar 0x7f0b0065
 int id expand_activities_button 0x7f0b0028
 int id expanded_menu 0x7f0b003d
 int id f 0x7f0b007d
-int id ftarea 0x7f0b0086
+int id ftarea 0x7f0b0084
 int id home 0x7f0b0004
 int id homeAsUp 0x7f0b000d
 int id icon 0x7f0b002c
@@ -672,7 +672,7 @@ int id textView4 0x7f0b0081
 int id textView5 0x7f0b005c
 int id textView6 0x7f0b005b
 int id textView7 0x7f0b005d
-int id textView8 0x7f0b0085
+int id textView8 0x7f0b0083
 int id textView9 0x7f0b0088
 int id time 0x7f0b009b
 int id title 0x7f0b002d
