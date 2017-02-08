@@ -35,7 +35,7 @@
         android:textColor="@color/colorAccent" />
 
     <TextView
-        android:text="Fecha:  "
+        android:text="Fecha (d/m/yyyy):  "
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView2"

@@ -15,6 +15,7 @@ public class ChangeUsuario extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_change_usuario);
+        getSupportActionBar().setTitle("Borrar usuario");
         //Creamos la base de datos
         final BdTareasSQLiteHelper bdHelper = new BdTareasSQLiteHelper(this, "dbTareas", null, 1);
 

@@ -4,9 +4,11 @@
 
     <item android:title="Acerca de"
         android:id="@+id/acerca" />
-    <item android:title="Ajustes de usuario"
+    <item android:title="Noticias"
+        android:id="@+id/noticias" />
+    <item android:title="Borrar usuario"
         android:id="@+id/change" />
-    <item android:title="Salir"
+    <item android:title="Cambiar de usuario"
         android:id="@+id/salir" />
 
 </menu>

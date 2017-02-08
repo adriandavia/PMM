@@ -159,6 +159,10 @@ public class TareasDiariasActivity extends AppCompatActivity implements ATareas.
                 Intent acerca = new Intent(this, AcercaDeActivity.class);
                 startActivity(acerca);
                 return true;
+            case R.id.noticias:
+                Intent noticias = new Intent(this, Noticias.class);
+                startActivity(noticias);
+                return true;
             case R.id.change:
                 Intent change = new Intent(this, ChangeUsuario.class);
                 Bundle bundle = new Bundle();

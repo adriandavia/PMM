@@ -49,15 +49,16 @@
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="10"
-        android:layout_alignTop="@+id/tusuario"
         android:layout_alignParentEnd="true"
         android:id="@+id/usuario"
         android:layout_toEndOf="@+id/tcontraseña"
-        android:textSize="14sp"
+        android:textSize="18sp"
         android:textStyle="normal|bold"
         android:textColor="@color/colorAccent"
         android:textAlignment="center"
-        android:layout_alignBottom="@+id/tusuario" />
+        android:layout_alignBottom="@+id/tusuario"
+        android:fontFamily="sans-serif"
+        android:typeface="serif" />
 
     <TextView
         android:text="Contraseña"
@@ -83,7 +84,7 @@
         android:id="@+id/password"
         android:fontFamily="sans-serif"
         android:typeface="serif"
-        android:textSize="14sp"
+        android:textSize="18sp"
         android:textColor="@color/colorAccent"
         android:textStyle="normal|bold"
         android:textAlignment="center"

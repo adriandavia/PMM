@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.mati.proyectotrimestral">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -18,7 +22,8 @@
         <activity android:name=".RegistroActivity" />
         <activity android:name=".AcercaDeActivity" />
         <activity android:name=".TareasDiariasActivity" />
-        <activity android:name=".ChangeUsuario"></activity>
+        <activity android:name=".ChangeUsuario" />
+        <activity android:name=".Noticias"></activity>
     </application>
 
 </manifest>
