@@ -30,6 +30,7 @@ import static com.example.mati.proyectotrimestral.R.id.añadir;
 
 public class TareasDiariasActivity extends AppCompatActivity implements ATareas.OnFragmentInteractionListener{
     protected Tareas[] datos;
+    protected Usuarios pasarusu;
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,7 +42,7 @@ public class TareasDiariasActivity extends AppCompatActivity implements ATareas.
 
         Bundle bundle = getIntent().getExtras();
         final Usuarios us = (Usuarios)bundle.getSerializable("usuario");
-        final Usuarios pasarusu = new Usuarios(us.getNombre(), us.getApellidos(), us.getUsername(), us.getPassword(), us.getCorreo());
+        pasarusu = new Usuarios(us.getNombre(), us.getApellidos(), us.getUsername(), us.getPassword(), us.getCorreo());
         final String usu = us.getUsername();
 
         //Creamos la base de datos
@@ -157,6 +158,13 @@ public class TareasDiariasActivity extends AppCompatActivity implements ATareas.
             case R.id.acerca:
                 Intent acerca = new Intent(this, AcercaDeActivity.class);
                 startActivity(acerca);
+                return true;
+            case R.id.change:
+                Intent change = new Intent(this, ChangeUsuario.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("usuario", pasarusu.getUsername());
+                change.putExtras(bundle);
+                startActivity(change);
                 return true;
             case R.id.salir:
                 Intent salir = new Intent(this, LogginActivity.class);

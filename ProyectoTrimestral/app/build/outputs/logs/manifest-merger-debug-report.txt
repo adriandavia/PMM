@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/mati/Documentos/PMM/ProyectoTrimestral/app/src/main/AndroidManifest.xml:2:1-23:12
+ADDED from /home/mati/Documentos/PMM/ProyectoTrimestral/app/src/main/AndroidManifest.xml:2:1-24:12
 	package
 		ADDED from /home/mati/Documentos/PMM/ProyectoTrimestral/app/src/main/AndroidManifest.xml:3:5-50
 		INJECTED from /home/mati/Documentos/PMM/ProyectoTrimestral/app/src/main/AndroidManifest.xml
@@ -14,7 +14,7 @@ ADDED from /home/mati/Documentos/PMM/ProyectoTrimestral/app/src/main/AndroidMani
 		INJECTED from /home/mati/Documentos/PMM/ProyectoTrimestral/app/src/main/AndroidManifest.xml
 		INJECTED from /home/mati/Documentos/PMM/ProyectoTrimestral/app/src/main/AndroidManifest.xml
 application
-ADDED from /home/mati/Documentos/PMM/ProyectoTrimestral/app/src/main/AndroidManifest.xml:5:5-21:19
+ADDED from /home/mati/Documentos/PMM/ProyectoTrimestral/app/src/main/AndroidManifest.xml:5:5-22:19
 MERGED from [com.android.support:appcompat-v7:25.1.0] /home/mati/Documentos/PMM/ProyectoTrimestral/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-v4:25.1.0] /home/mati/Documentos/PMM/ProyectoTrimestral/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.1.0/AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-compat:25.1.0] /home/mati/Documentos/PMM/ProyectoTrimestral/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.1.0/AndroidManifest.xml:25:5-20
@@ -60,6 +60,10 @@ activity#com.example.mati.proyectotrimestral.TareasDiariasActivity
 ADDED from /home/mati/Documentos/PMM/ProyectoTrimestral/app/src/main/AndroidManifest.xml:20:9-59
 	android:name
 		ADDED from /home/mati/Documentos/PMM/ProyectoTrimestral/app/src/main/AndroidManifest.xml:20:19-56
+activity#com.example.mati.proyectotrimestral.ChangeUsuario
+ADDED from /home/mati/Documentos/PMM/ProyectoTrimestral/app/src/main/AndroidManifest.xml:21:9-60
+	android:name
+		ADDED from /home/mati/Documentos/PMM/ProyectoTrimestral/app/src/main/AndroidManifest.xml:21:19-48
 uses-sdk
 INJECTED from /home/mati/Documentos/PMM/ProyectoTrimestral/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:appcompat-v7:25.1.0] /home/mati/Documentos/PMM/ProyectoTrimestral/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/AndroidManifest.xml:21:5-23:78

@@ -35,4 +35,7 @@ public class OperacionesSQL {
     protected static void delete_tarea(SQLiteDatabase sqLiteDatabase, Integer id){
         sqLiteDatabase.execSQL("DELETE from tareas where id = '"+id+"';");
     }
+    protected static void delete_usuario(SQLiteDatabase sqLiteDatabase, String username){
+        sqLiteDatabase.execSQL("DELETE from usuarios where username = '" +username+"';");
+    }
 }

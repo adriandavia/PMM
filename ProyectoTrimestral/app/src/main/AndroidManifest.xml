@@ -18,6 +18,7 @@
         <activity android:name=".RegistroActivity" />
         <activity android:name=".AcercaDeActivity" />
         <activity android:name=".TareasDiariasActivity" />
+        <activity android:name=".ChangeUsuario"></activity>
     </application>
 
 </manifest>
