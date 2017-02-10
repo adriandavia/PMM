@@ -29,7 +29,11 @@ public class BdTareasSQLiteHelper extends SQLiteOpenHelper {
                 "username text not null," +
                 " FOREIGN KEY (username) REFERENCES usuarios(username) ON DELETE CASCADE)" );
     }
-
+    @Override
+    public void onOpen(SQLiteDatabase db) {
+        super.onOpen(db);
+        db.setForeignKeyConstraintsEnabled(true);
+    }
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS usuarios");
